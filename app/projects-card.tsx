@@ -81,18 +81,6 @@ export function ProjectCard({
           ))}
         </div>
       </motion.div>
-
-      {files.length > 0 && (
-        <CodePreview
-          isOpen={showCode}
-          onClose={() => {
-            setShowCode(false);
-            setFiles([]);
-          }}
-          files={files}
-          projectTitle={title}
-        />
-      )}
     </>
   );
 }
