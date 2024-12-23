@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio - Fullstack Developer',
+  title: 'Dnzx - Fullstack Developer',
   description: 'Fullstack developer specialized in FiveM, React, Next.js, and Nest.js',
 };
 
