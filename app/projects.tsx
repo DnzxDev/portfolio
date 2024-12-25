@@ -21,7 +21,7 @@ const projects = [
     title: "Landing Page + Dashboard",
     description: "Now Yes! this project is a version of the first two projects, but much improved! here we have a landing page with the fixed dark theme, when you log in with discord, and access the dashboard, you can change themes, there is a shopping system, inventory and information, to buy something, you must have gems! In addition, when you buy something, a message is sent to an API in FiveM, the API does the work of adding the benefits, which are: Properties, Cars, Vips and more!",
     technologies: ["Next.js", "React", "Tailwind", "Nhost", "Typescript", "Javascript", "GraphQL"],
-    imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/image.png",
+    imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/dnzdevox.png",
     isPrivate: true
   },
   {
