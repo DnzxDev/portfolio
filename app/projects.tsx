@@ -3,13 +3,13 @@
 import { ProjectCard } from "./projects-card"
 
 const projects = [
-  {
-    title: "Dashboard - Primary Version",
-    description: "In this project we used Next.js together with typescript, to make the back end work, we made an API, in Nest.js, which takes all the information from the database (MySQL), from which the information is used in the dashboard!",
-    technologies: ["Next.js", "React", "NestJS", "MySQL", "Tailwind"],
-    imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/image.png",
-    isPrivate: true
-  },
+  // {
+  //   title: "Dashboard - Primary Version",
+  //   description: "In this project we used Next.js together with typescript, to make the back end work, we made an API, in Nest.js, which takes all the information from the database (MySQL), from which the information is used in the dashboard!",
+  //   technologies: ["Next.js", "React", "NestJS", "MySQL", "Tailwind"],
+  //   imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/image.png",
+  //   isPrivate: true
+  // },
   {
     title: "Landing Page - Primary Version",
     description: "The project used Next.JS, in its slightly older version, the basis of the project is components, and it was done in JSX, there is no back end, it's just a landing page!",
