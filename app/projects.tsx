@@ -50,7 +50,7 @@ const projects = [
   },
   {
     title: "Website Connection",
-    description: "Moving on to the fivem side, I have a basic connection system, to connect your fivem server to a website or vice versa, the javascript executes events in lua, by post or get method !",
+    description: "Moving on to the fivem side, I have a basic connection system, to connect your fivem server to a website, the javascript executes events in lua, by post or get method !",
     technologies: ["Lua", "Javascript"],
     isPrivate: false,
     github: {
