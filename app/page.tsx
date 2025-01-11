@@ -34,7 +34,7 @@ export default function Home() {
             Dnzx
           </h1>
           <p className="text-xl text-muted-foreground">
-            Hello, my name is Dnzx, I'm 15 years old and I'm a full stack developer focused on fivem resources and web development! 
+            Hello, my name is Daniel, I'm 15 years old and I'm a full stack developer focused on fivem resources and web development! 
           </p>
           <div className="flex justify-center gap-4">
             <Button
