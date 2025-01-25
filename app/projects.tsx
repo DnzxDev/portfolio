@@ -49,6 +49,16 @@ const projects = [
     }
   },
   {
+    title: "Management tablet - Fivem",
+    description: "This tablet was developed for New Valley, a server project for FiveM, it was made only with HTML, Javascript AND CSS, having a back end in Lua , making scripting easier for FiveM, We must all agree that it is easier than C#.",
+    technologies: ["Javascript", "HTML","Css","Lua"],
+    isPrivate: false,
+    github: {
+      owner: "Dn099z1",
+      repo: "dnzx-panel"
+    }
+  },
+  {
     title: "Website Connection",
     description: "Moving on to the fivem side, I have a basic connection system, to connect your fivem server to a website, the javascript executes events in lua, by post or get method !",
     technologies: ["Lua", "Javascript"],
