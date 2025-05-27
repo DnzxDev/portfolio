@@ -50,7 +50,7 @@ export default function Home() {
               variant="outline"
               size="lg"
               className="gap-2"
-              onClick={() => window.open('https://linkedin.com', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/dnzxdevop/', '_blank')}
             >
               <Linkedin className="w-5 h-5" />
               LinkedIn
