@@ -69,7 +69,7 @@ export default function Home() {
       title: "Consultoria Técnica",
       description:
         "Análise de código, arquitetura e mentoria em desenvolvimento",
-      price: "R$ 80/hora",
+      price: "R$ 120/hora",
       duration: "Flexível",
       features: [
         "Code review detalhado",
