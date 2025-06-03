@@ -82,12 +82,11 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="min-h-screen py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+      className="min-h-screen py-20 px-4"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold  bg-clip-text text-transparent mb-4">
             Meus Projetos
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
