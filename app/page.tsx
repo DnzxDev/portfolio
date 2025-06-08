@@ -44,7 +44,7 @@ export default function Home() {
     {
       title: "Desenvolvimento Backend",
       description: "APIs robustas e escaláveis com Node.js e Nest.js",
-      price: "R$ 1.200 - R$ 3.200",
+      price: "R$ 2.900 - R$ 5.200",
       duration: "5-20 dias",
       features: [
         "API Express integrado ao frontend",
@@ -57,7 +57,7 @@ export default function Home() {
     {
       title: "Desenvolvimento Frontend",
       description: "Interfaces modernas e responsivas com React/Next.js",
-      price: "R$ 1.000 - R$ 3.000",
+      price: "R$ 3.000 - R$ 6.000",
       duration: "4-18 dias",
       features: [
         "Design responsivo",
@@ -70,7 +70,7 @@ export default function Home() {
       title: "Consultoria Técnica",
       description:
         "Análise de código, arquitetura e mentoria em desenvolvimento",
-      price: "R$ 80/hora",
+      price: "R$ 120/hora",
       duration: "Flexível",
       features: [
         "Code review detalhado",
