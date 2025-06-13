@@ -24,7 +24,6 @@ import { ProjectsSection } from "./projects";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 
-
 export default function Home() {
   const services = [
     {
@@ -241,6 +240,37 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
           </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1"
+            >
+              <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl blur-xl" />
+                <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-gray-800">
+                  <div className="text-center">
+                    <div className="w-32 h-32 sm:w-48 sm:h-48 mx-auto mb-6 relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-pulse opacity-20" />
+                      <Image
+                        src="https://avatars.githubusercontent.com/u/102752827?v=4"
+                        alt="Profile"
+                        width={192}
+                        height={192}
+                        className="rounded-full border-4 border-blue-500/30 w-full h-full object-cover relative z-10"
+                      />
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                      Daniel
+                    </h3>
+                    <p className="text-cyan-400 font-semibold text-lg">
+                      Full Stack Developer
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
