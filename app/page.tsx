@@ -241,25 +241,6 @@ export default function Home() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
           </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="order-2 lg:order-1 space-y-6"
-            >
-              <div className="hidden sm:block relative max-w-md mx-auto lg:max-w-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl sm:rounded-3xl transform rotate-2" />
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl sm:rounded-3xl transform -rotate-2" />
-                <Image
-                  src="profile.jpeg"
-                  alt="Daniel - Desenvolvedor Full Stack"
-                  width={400}
-                  height={400}
-                  className="rounded-2xl sm:rounded-3xl border-2 border-gray-800 relative z-10 w-full h-auto"
-                />
-              </div>
             </motion.div>
 
             <motion.div
