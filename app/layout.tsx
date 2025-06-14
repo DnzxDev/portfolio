@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.gif" />
       <body className={`${inter.className} bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
