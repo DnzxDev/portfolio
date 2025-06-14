@@ -1,147 +1,352 @@
 "use client";
 
+import type React from "react";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { ProjectCard } from "./projects-card";
+import { Button } from "@/components/ui/button";
+import {
+  Mail,
+  MessageCircle,
+  Linkedin,
+  Github,
+  ExternalLink,
+  Sparkles,
+} from "lucide-react";
 
 const projects = [
   {
     title: "Landing Page + Dashboard",
     description:
-      "Agora Sim! este projeto é uma versão dos dois primeiros projetos, mas muito melhorado! aqui temos uma landing page com o tema escuro fixo, quando você faz login com discord, e acessa o dashboard, você pode alterar temas, há um sistema de compras, inventário e informações, para comprar algo, você deve ter gemas! Além disso, quando você compra algo, uma mensagem é enviada para uma API no FiveM, a API faz o trabalho de adicionar os benefícios, que são: Propriedades, Carros, Vips e mais!",
+      "Projeto completo com landing page tema escuro, sistema de login Discord, dashboard com troca de temas, sistema de compras com gemas, inventário e integração com API FiveM para benefícios automáticos.",
     technologies: [
       "Next.js",
       "React",
       "Tailwind",
       "Nhost",
-      "Typescript",
-      "Javascript",
+      "TypeScript",
+      "JavaScript",
       "GraphQL",
     ],
     imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/dnzdevox.png",
     isPrivate: true,
+    category: "Full Stack",
   },
   {
     title: "Painel Admin",
     description:
-      "Você se lembra do projeto anterior? a landing page junto com um dashboard? Bem, se há produtos para serem vendidos, deve haver uma maneira de adicioná-los. No dashboard admin você pode fazer isso e outras coisas, como supervisionar seu servidor, jogadores e banimentos!",
+      "Dashboard administrativo completo para gerenciamento de produtos, supervisão de servidor, controle de jogadores e sistema de banimentos. Interface intuitiva e responsiva.",
     technologies: [
       "Next.js",
       "React",
       "Tailwind",
-      "Typescript",
-      "Javascript",
+      "TypeScript",
+      "JavaScript",
       "MySQL",
     ],
     imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/im23age.png",
     isPrivate: true,
+    category: "Dashboard",
   },
   {
-    title: "Armazenamento",
+    title: "Sistema de Armazenamento",
     description:
-      "Este projeto atua como um armazenamento para imagens e arquivos, feito para uso básico, considerando que apenas arquivos dentro da pasta pública são aceitos, no futuro é possível adicionar suporte para alguma plataforma de hospedagem para facilitar o gerenciamento de arquivos!",
-    technologies: ["Next.js", "React", "Tailwind", "Typescript"],
+      "Plataforma de armazenamento para imagens e arquivos com interface clean e funcional. Suporte para arquivos da pasta pública com possibilidade de expansão futura.",
+    technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
     imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/im1age.png",
     isPrivate: true,
+    category: "Utility",
   },
   {
-    title: "API - Licenças",
+    title: "API - Sistema de Licenças",
     description:
-      "Bem, vamos para o Back End? aqui temos uma API que cria e verifica licenças no banco de dados supabase, este é um projeto antigo, na época eu não tinha tanta experiência, boa notícia, este é público!",
-    technologies: ["Javascript", "Supabase"],
+      "API robusta para criação e verificação de licenças usando Supabase. Sistema completo de autenticação e gerenciamento de licenças para aplicações.",
+    technologies: ["JavaScript", "Supabase", "Node.js"],
     isPrivate: false,
     github: {
       owner: "DnzxDev",
       repo: "api-supabase",
     },
+    category: "Backend",
   },
   {
-    title: "Tablet de Gerenciamento - Fivem",
+    title: "Tablet de Gerenciamento - FiveM",
     description:
-      "Este tablet foi desenvolvido para New Valley, um projeto de servidor para FiveM, foi feito apenas com HTML, Javascript E CSS, tendo um back end em Lua, facilitando a programação para FiveM, Todos devemos concordar que é mais fácil que C#.",
-    technologies: ["Javascript", "HTML", "Css", "Lua"],
+      "Interface de tablet desenvolvida para New Valley (FiveM) com HTML, CSS e JavaScript no frontend e Lua no backend. Sistema completo de gerenciamento in-game.",
+    technologies: ["JavaScript", "HTML", "CSS", "Lua"],
     isPrivate: false,
     github: {
       owner: "DnzxDev",
       repo: "dnzx-panel",
     },
+    category: "FiveM",
   },
   {
-    title: "Conexão Website",
+    title: "Sistema de Conexão Website",
     description:
-      "Passando para o lado do fivem, tenho um sistema básico de conexão, para conectar seu servidor fivem a um website, o javascript executa eventos em lua, por método post ou get!",
-    technologies: ["Lua", "Javascript"],
+      "Sistema básico de conexão entre servidor FiveM e website, permitindo comunicação bidirecional através de eventos Lua executados via JavaScript por métodos POST/GET.",
+    technologies: ["Lua", "JavaScript", "Node.js"],
     isPrivate: false,
     github: {
       owner: "DnzxDev",
       repo: "connection",
       path: "backend",
     },
+    category: "Integration",
   },
 ];
 
-export function ProjectsSection() {
+const categories = [
+  "Todos",
+  "Full Stack",
+  "Dashboard",
+  "Backend",
+  "FiveM",
+  "Utility",
+  "Integration",
+];
+
+interface ContactModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  if (!isOpen) return null;
+
+  const contacts = [
+    {
+      name: "WhatsApp",
+      description: "Resposta rápida e direta",
+      icon: <MessageCircle className="w-6 h-6" />,
+      url: "https://wa.me/5532991048844",
+      color: "from-green-500 to-green-600",
+      hoverColor: "hover:from-green-600 hover:to-green-700",
+    },
+    {
+      name: "LinkedIn",
+      description: "Networking profissional",
+      icon: <Linkedin className="w-6 h-6" />,
+      url: "https://linkedin.com/in/dnzxdevop",
+      color: "from-blue-600 to-blue-700",
+      hoverColor: "hover:from-blue-700 hover:to-blue-800",
+    },
+    {
+      name: "Email",
+      description: "Contato formal",
+      icon: <Mail className="w-6 h-6" />,
+      url: "mailto:daniel@exemplo.com",
+      color: "from-purple-500 to-purple-600",
+      hoverColor: "hover:from-purple-600 hover:to-purple-700",
+    },
+  ];
+
   return (
-    <section
-      id="projects"
-      className="min-h-screen py-20 px-4"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+      onClick={onClose}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold  bg-clip-text text-transparent mb-4">
-            Meus Projetos
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Explore meu trabalho mais recente e descubra as tecnologias pelas
-            quais sou apaixonado
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-6 rounded-full" />
-        </div>
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        className="bg-slate-900/95 backdrop-blur-sm rounded-3xl p-8 max-w-md w-full border border-slate-700 relative overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl" />
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors z-10 p-2 hover:bg-slate-800 rounded-full"
+        >
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={`${project.title}-${index}`} {...project} />
-          ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <p className="text-gray-400 mb-6">
-            Interessado em trabalhar juntos ou quer ver mais do meu trabalho?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://github.com/DnzxDev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg hover:from-gray-700 hover:to-gray-800 transition-all duration-300 border border-gray-700 hover:border-gray-600"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-              Ver Todos os Projetos
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+        <div className="relative z-10">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl mb-4">
+              <Sparkles className="w-8 h-8 text-blue-400" />
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-2">
+              Vamos Conversar!
+            </h3>
+            <p className="text-slate-400 text-lg">
+              Escolha a melhor forma de entrar em contato
+            </p>
+          </div>
+          <div className="space-y-4">
+            {contacts.map((contact, index) => (
+              <motion.a
+                key={contact.name}
+                href={contact.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, x: 5 }}
+                className={`flex items-center gap-4 p-6 bg-gradient-to-r ${contact.color} ${contact.hoverColor} rounded-2xl transition-all duration-300 transform hover:shadow-xl group relative overflow-hidden`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              Entre em Contato
-            </a>
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10 flex items-center gap-4 w-full">
+                  <div className="flex-shrink-0">{contact.icon}</div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold text-lg">
+                      {contact.name}
+                    </h4>
+                    <p className="text-white/80 text-sm">
+                      {contact.description}
+                    </p>
+                  </div>
+                  <ExternalLink className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
+                </div>
+              </motion.a>
+            ))}
+          </div>
+
+          <div className="text-center mt-8 pt-6 border-t border-slate-700">
+            <p className="text-slate-400 text-sm">
+              Respondo em até 24 horas! 🚀
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+export function ProjectsSection() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
+
+  const filteredProjects =
+    selectedCategory === "Todos"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
+
+  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsContactModalOpen(true);
+  };
+
+  return (
+    <>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-white">Meus</span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Projetos
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6" />
+            <p className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed">
+              Explore meu trabalho mais recente e descubra as tecnologias pelas
+              quais sou apaixonado
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="flex flex-wrap justify-center gap-3 mb-12"
+          >
+            {categories.map((category, index) => (
+              <motion.button
+                key={category}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  selectedCategory === category
+                    ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/25"
+                    : "bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-white border border-slate-700 hover:border-slate-600"
+                }`}
+              >
+                {category}
+              </motion.button>
+            ))}
+          </motion.div>
+          <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={`${project.title}-${index}`} {...project} />
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mt-20"
+          >
+            <div className="relative p-12 rounded-3xl bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm border border-slate-700 overflow-hidden">
+              <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl" />
+
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  Gostou do que viu?
+                </h3>
+                <p className="text-slate-400 mb-8 max-w-2xl mx-auto text-lg">
+                  Estes são apenas alguns dos meus projetos. Quer ver mais do
+                  meu trabalho ou discutir uma colaboração?
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    size="lg"
+                    className="group bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 px-8 py-6 text-lg transition-all duration-300"
+                    asChild
+                  >
+                    <a
+                      href="https://github.com/DnzxDev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                      Ver Todos os Projetos
+                    </a>
+                  </Button>
+
+                  <Button
+                    size="lg"
+                    onClick={handleContactClick}
+                    className="group bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-8 py-6 text-lg font-semibold shadow-xl shadow-blue-500/25 transition-all duration-300 hover:scale-105"
+                  >
+                    <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                    Entre em Contato
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
+    </>
   );
 }
