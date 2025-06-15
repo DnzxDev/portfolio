@@ -80,7 +80,7 @@ const projects = [
       owner: "DnzxDev",
       repo: "dnzx-panel",
     },
-    category: "FiveM",
+    category: "Utility",
   },
   {
     title: "Sistema de Conexão Website",
@@ -114,11 +114,8 @@ const projects = [
 const categories = [
   "Todos",
   "Full Stack",
-  "Dashboard",
   "Backend",
-  "FiveM",
   "Utility",
-  "Integration",
 ];
 
 interface ContactModalProps {
