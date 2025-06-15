@@ -47,7 +47,7 @@ const projects = [
     ],
     imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/im23age.png",
     isPrivate: true,
-    category: "Dashboard",
+    category: "Full Stack",
   },
   {
     title: "Sistema de Armazenamento",
@@ -93,7 +93,21 @@ const projects = [
       repo: "connection",
       path: "backend",
     },
-    category: "Integration",
+    category: "Backend",
+  },
+
+    {
+    title: "Sistema de Autenticação - NestJS",
+    description:
+      "Autenticação segura com suporte a múltiplos papéis, renovação de sessão e recuperação de senha por e-mail.",
+    technologies: ["Typescript", "TypeORM", "NestJs"],
+    isPrivate: false,
+    github: {
+      owner: "DnzxDev",
+      repo: "auth-system",
+      path: "backend",
+    },
+    category: "Backend",
   },
 ];
 
