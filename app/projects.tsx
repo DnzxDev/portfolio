@@ -56,7 +56,7 @@ const projects = [
     technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
     imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/im1age.png",
     isPrivate: true,
-    category: "Utility",
+    category: "Full Stack",
   },
   {
     title: "API - Sistema de Licenças",
@@ -71,18 +71,6 @@ const projects = [
     category: "Backend",
   },
   {
-    title: "Tablet de Gerenciamento - FiveM",
-    description:
-      "Interface de tablet desenvolvida para New Valley (FiveM) com HTML, CSS e JavaScript no frontend e Lua no backend. Sistema completo de gerenciamento in-game.",
-    technologies: ["JavaScript", "HTML", "CSS", "Lua"],
-    isPrivate: false,
-    github: {
-      owner: "DnzxDev",
-      repo: "dnzx-panel",
-    },
-    category: "Utility",
-  },
-  {
     title: "Sistema de Conexão Website",
     description:
       "Sistema básico de conexão entre servidor FiveM e website, permitindo comunicação bidirecional através de eventos Lua executados via JavaScript por métodos POST/GET.",
@@ -95,8 +83,19 @@ const projects = [
     },
     category: "Backend",
   },
-
-    {
+  {
+    title: "Tablet de Gerenciamento - FiveM",
+    description:
+      "Interface de tablet desenvolvida para New Valley (FiveM) com HTML, CSS e JavaScript no frontend e Lua no backend. Sistema completo de gerenciamento in-game.",
+    technologies: ["JavaScript", "HTML", "CSS", "Lua"],
+    isPrivate: false,
+    github: {
+      owner: "DnzxDev",
+      repo: "dnzx-panel",
+    },
+    category: "Front End",
+  },
+  {
     title: "Sistema de Autenticação - NestJS",
     description:
       "Autenticação segura com suporte a múltiplos papéis, renovação de sessão e recuperação de senha por e-mail.",
@@ -111,12 +110,7 @@ const projects = [
   },
 ];
 
-const categories = [
-  "Todos",
-  "Full Stack",
-  "Backend",
-  "Utility",
-];
+const categories = ["Todos", "Full Stack", "Front End", "Backend"];
 
 interface ContactModalProps {
   isOpen: boolean;
