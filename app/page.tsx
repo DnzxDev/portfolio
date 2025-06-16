@@ -625,78 +625,139 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-24 px-4 sm:px-6 lg:px-8 relative z-10" id="skills">
-        <div className="max-w-7xl mx-auto">
+      <section
+        className="py-32 px-6 sm:px-10 lg:px-20 relative z-10 overflow-hidden"
+        id="skills"
+      >
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500/15 rounded-full blur-3xl animate-pulse delay-2000" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-24"
           >
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Minhas</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Habilidades
+            <div className="relative inline-block">
+              <h2 className="text-7xl font-black tracking-tight relative z-10">
+                <span className="text-white drop-shadow-2xl">Minhas</span>{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+                  Habilidades
+                </span>
+              </h2>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-2xl rounded-full -z-10" />
+            </div>
+
+            <div className="flex items-center justify-center mt-8 mb-6">
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent to-blue-500 rounded-full" />
+              <div className="w-8 h-8 mx-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full animate-spin" />
+              <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-transparent rounded-full" />
+            </div>
+
+            <p className="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
+              Tecnologias e ferramentas que utilizo para criar experiências
+              digitais
+              <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold">
+                {" "}
+                impactantes
               </span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6" />
-            <p className="text-slate-400 text-xl max-w-3xl mx-auto">
-              Tecnologias e ferramentas que uso para criar soluções excepcionais
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {skills.map((category, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="relative group"
+                initial={{ opacity: 0, y: 50, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{
+                  delay: index * 0.15,
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                whileHover={{
+                  scale: 1.03,
+                  rotateY: 2,
+                  transition: { duration: 0.3 },
+                }}
+                className="relative group perspective-1000"
               >
-                <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-800 hover:border-slate-700 transition-all duration-500 relative overflow-hidden h-full">
+                {/* Glow effect on hover */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+
+                <div className="relative bg-slate-900/60 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/10 transition-all duration-700 hover:border-slate-400/70 transform-gpu">
+                  {/* Animated corner accents */}
+                  <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-blue-400/50 rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-pink-400/50 rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Floating gradient orb */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                    className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-40 blur-2xl z-0 pointer-events-none animate-bounce"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, ${category.gradient})`,
+                      animationDuration: "3s",
+                      animationDelay: `${index * 0.5}s`,
+                    }}
                   />
 
                   <div className="relative z-10">
                     <div className="flex items-center mb-8">
-                      <div
-                        className={`p-4 bg-gradient-to-br ${category.gradient} bg-opacity-20 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        <div className="text-white">{category.icon}</div>
+                      <div className="relative">
+                        <div
+                          className={`p-5 bg-gradient-to-br ${category.gradient} rounded-2xl mr-6 shadow-lg transform group-hover:scale-110 transition-transform duration-300`}
+                        >
+                          <div className="text-4xl text-white filter drop-shadow-md">
+                            {category.icon}
+                          </div>
+                        </div>
+                        <div className="absolute -inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white">
-                        {category.category}
-                      </h3>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                          {category.category}
+                        </h3>
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                      </div>
                     </div>
 
                     <div className="space-y-6">
                       {category.skills.map((skill, skillIndex) => (
                         <div key={skillIndex} className="group/skill">
                           <div className="flex justify-between items-center mb-3">
-                            <span className="text-slate-300 font-medium group-hover/skill:text-white transition-colors">
+                            <span className="text-slate-200 font-semibold text-lg group-hover/skill:text-white group-hover/skill:scale-105 transition-all duration-300 origin-left">
                               {skill.name}
                             </span>
-                            <span className="text-slate-400 text-sm font-mono">
-                              {skill.level}%
-                            </span>
-                          </div>
-                          <div className="relative">
-                            <div className="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
-                              <motion.div
-                                className={`${skill.color} h-3 rounded-full relative`}
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${skill.level}%` }}
-                                transition={{
-                                  duration: 1.5,
-                                  delay: skillIndex * 0.1,
-                                  ease: "easeOut",
-                                }}
-                              >
-                                <div className="absolute inset-0 bg-white/20 animate-pulse" />
-                              </motion.div>
+                            <div className="flex items-center space-x-2">
+                              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300" />
+                              <span className="text-slate-400 text-base font-mono bg-slate-800/50 px-2 py-1 rounded-md">
+                                {skill.level}%
+                              </span>
                             </div>
+                          </div>
+                          <div className="relative w-full h-4 bg-slate-700/70 rounded-full overflow-hidden backdrop-blur-sm">
+                            <motion.div
+                              className={`h-4 rounded-full relative overflow-hidden ${skill.color}`}
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${skill.level}%` }}
+                              transition={{
+                                duration: 1.8,
+                                delay: skillIndex * 0.15,
+                                ease: [0.25, 0.1, 0.25, 1],
+                              }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent animate-pulse rounded-full" />
+                              <div
+                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-ping rounded-full"
+                                style={{ animationDuration: "2s" }}
+                              />
+                            </motion.div>
+                            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full opacity-0 group-hover/skill:opacity-100 animate-ping transition-opacity duration-300" />
                           </div>
                         </div>
                       ))}
@@ -708,141 +769,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section
-        id="services"
-        className="py-24 px-4 sm:px-6 lg:px-8 relative z-10"
-      >
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Meus</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Serviços
-              </span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6" />
-            <p className="text-slate-400 text-xl max-w-3xl mx-auto">
-              Soluções personalizadas para transformar suas ideias em realidade
-              digital
-            </p>
-          </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className={`relative p-8 rounded-3xl backdrop-blur-sm border transition-all duration-500 group overflow-hidden ${
-                  service.popular
-                    ? "bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-blue-500/30 shadow-2xl shadow-blue-500/10"
-                    : "bg-slate-900/50 border-slate-800 hover:border-slate-700"
-                }`}
-              >
-                {/* Efeito de brilho */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                />
-
-                <div className="relative z-10">
-                  <div className="mb-6">
-                    <div
-                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} bg-opacity-20 mb-6 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <div className="text-white">{service.icon}</div>
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-slate-300 mb-6 leading-relaxed text-lg">
-                      {service.description}
-                    </p>
-
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                        {service.price}
-                      </div>
-                      <div className="flex items-center gap-2 text-slate-400 bg-slate-800/50 px-3 py-1 rounded-full">
-                        <Clock className="w-4 h-4" />
-                        <span className="text-sm font-medium">
-                          {service.duration}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 mb-8">
-                    {service.features.map((feature, featureIndex) => (
-                      <motion.div
-                        key={featureIndex}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: featureIndex * 0.1 }}
-                        className="flex items-start gap-3 group/feature"
-                      >
-                        <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5 group-hover/feature:scale-110 transition-transform" />
-                        <span className="text-slate-300 group-hover/feature:text-white transition-colors">
-                          {feature}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-center mt-20"
-          >
-            <div className="relative p-12 rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-blue-500/20 overflow-hidden">
-              <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl" />
-
-              <div className="relative z-10">
-                <motion.div
-                  initial={{ scale: 0.8 }}
-                  whileInView={{ scale: 1 }}
-                  className="mb-6"
-                >
-                  <Rocket className="w-16 h-16 text-blue-400 mx-auto mb-4" />
-                </motion.div>
-
-                <h3 className="text-4xl font-bold text-white mb-6">
-                  Pronto para começar seu projeto?
-                </h3>
-                <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-xl leading-relaxed">
-                  Vamos conversar sobre suas necessidades e criar uma solução
-                  personalizada que supere suas expectativas.
-                </p>
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-12 py-6 text-xl font-semibold shadow-2xl shadow-blue-500/25 hover:scale-105 transition-all duration-300"
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  <span className="flex items-center">
-                    Vamos Conversar
-                    <ArrowRight className="w-6 h-6 ml-2" />
-                  </span>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
       <div className="relative z-10" id="projects">
         <ProjectsSection />
       </div>
