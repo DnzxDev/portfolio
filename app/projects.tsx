@@ -17,20 +17,6 @@ import {
 
 const projects = [
   {
-    title: "Central City",
-    description:
-      "Sistema completo e robusto, desenvolvido para atender diversas necessidades de uma comunidade, integrando landing page moderna, sistema de autenticação com perfil de usuário, loja virtual com gateway de pagamento, painel administrativo e múltiplos módulos personalizados. O projeto foi idealizado com foco em escalabilidade, performance e integração com plataformas externas, tornando-se uma solução centralizada e eficiente.",
-    technologies: [
-      "Next.js",
-      "Styled-Components",
-      "MySQL",
-      "TypeScript",
-    ],
-    imageUrl: "https://r2.fivemanage.com/fHlysX8Amd6yEorWTNTim/central.png",
-    isPrivate: true,
-    category: "Full Stack",
-  },
-  {
     title: "Landing Page + Dashboard",
     description:
       "Projeto completo com landing page tema escuro, sistema de login Discord, dashboard com troca de temas, sistema de compras com gemas, inventário e integração com API FiveM para benefícios automáticos.",
