@@ -17,6 +17,20 @@ import {
 
 const projects = [
   {
+    title: "Central City",
+    description:
+      "Sistema completo e robusto, desenvolvido para atender diversas necessidades de uma comunidade, integrando landing page moderna, sistema de autenticação com perfil de usuário, loja virtual com gateway de pagamento, painel administrativo e múltiplos módulos personalizados. O projeto foi idealizado com foco em escalabilidade, performance e integração com plataformas externas, tornando-se uma solução centralizada e eficiente.",
+    technologies: [
+      "Next.js",
+      "Styled-Components",
+      "MySQL",
+      "TypeScript",
+    ],
+    imageUrl: "https://r2.fivemanage.com/fHlysX8Amd6yEorWTNTim/central.png",
+    isPrivate: true,
+    category: "Full Stack",
+  },
+  {
     title: "Landing Page + Dashboard",
     description:
       "Projeto completo com landing page tema escuro, sistema de login Discord, dashboard com troca de temas, sistema de compras com gemas, inventário e integração com API FiveM para benefícios automáticos.",
@@ -26,7 +40,6 @@ const projects = [
       "Tailwind",
       "Nhost",
       "TypeScript",
-      "JavaScript",
       "GraphQL",
     ],
     imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/dnzdevox.png",
@@ -42,7 +55,6 @@ const projects = [
       "React",
       "Tailwind",
       "TypeScript",
-      "JavaScript",
       "MySQL",
     ],
     imageUrl: "https://r2.fivemanage.com/h1RaORAfpynzso56Pcf6Z/im23age.png",
@@ -285,11 +297,10 @@ export function ProjectsSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${selectedCategory === category
                     ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/25"
                     : "bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-white border border-slate-700 hover:border-slate-600"
-                }`}
+                  }`}
               >
                 {category}
               </motion.button>
