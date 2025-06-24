@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Nav } from "@/components/nav";
+import Footer from "./footer";
 import {
   Code,
   Server,
@@ -92,8 +93,8 @@ export default function Home() {
         "Integração com APIs",
       ],
       icon: <Code className="w-6 h-6" />,
-      gradient: "from-blue-500 to-cyan-500",
-      bgGradient: "from-blue-500/10 to-cyan-500/10",
+      gradient: "from-[#637DDB] to-[#637DDB]/80",
+      bgGradient: "from-[#637DDB]/10 to-[#637DDB]/5",
     },
     {
       title: "Consultoria Técnica",
@@ -127,7 +128,7 @@ export default function Home() {
       icon: Target,
       color: "text-green-400",
     },
-    { label: "Tecnologias", value: "12+", icon: Code, color: "text-blue-400" },
+    { label: "Tecnologias", value: "12+", icon: Code, color: "text-[#637DDB]" },
     {
       label: "Clientes Satisfeitos",
       value: "25+",
@@ -140,12 +141,12 @@ export default function Home() {
     {
       category: "Frontend",
       icon: <Code className="w-6 h-6" />,
-      gradient: "from-blue-500 to-cyan-500",
+      gradient: "from-[#637DDB] to-[#637DDB]/80",
       skills: [
-        { name: "Next.js", level: 90, color: "bg-slate-700" },
-        { name: "React", level: 85, color: "bg-blue-500" },
-        { name: "TypeScript", level: 95, color: "bg-blue-600" },
-        { name: "Tailwind CSS", level: 80, color: "bg-cyan-500" },
+        { name: "Next.js", level: 90, color: "bg-[#1C1C1B]" },
+        { name: "React", level: 85, color: "bg-[#637DDB]" },
+        { name: "TypeScript", level: 95, color: "bg-[#637DDB]/80" },
+        { name: "Tailwind CSS", level: 80, color: "bg-[#637DDB]/60" },
       ],
     },
     {
@@ -155,7 +156,7 @@ export default function Home() {
       skills: [
         { name: "Node.js", level: 95, color: "bg-green-500" },
         { name: "Nest.js", level: 85, color: "bg-red-500" },
-        { name: "Express", level: 90, color: "bg-gray-600" },
+        { name: "Express", level: 90, color: "bg-[#1C1C1B]" },
         { name: "GraphQL", level: 75, color: "bg-pink-500" },
       ],
     },
@@ -174,25 +175,19 @@ export default function Home() {
 
   return (
     <main
-      className="min-h-screen bg-slate-950 overflow-x-hidden"
+      className="min-h-screen bg-[#121211] overflow-x-hidden"
       ref={containerRef}
     >
       <Nav />
       <div className="fixed inset-0 z-0">
         <StarsBackground />
         <ShootingStars />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-slate-950 to-purple-950/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#637DDB]/10 via-[#121211] to-[#637DDB]/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#637DDB]/10 via-transparent to-transparent" />
       </div>
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div style={{ y, opacity }} className="max-w-7xl mx-auto w-full">
           <div className="text-center space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 backdrop-blur-sm"
-            ></motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -200,11 +195,11 @@ export default function Home() {
               className="space-y-4"
             >
               <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="block text-white">Olá, eu sou o</span>
-                <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent relative">
+                <span className="block text-[#F0F0F0]">Olá, eu sou o</span>
+                <span className="block bg-gradient-to-r from-[#637DDB] via-[#637DDB]/80 to-[#637DDB] bg-clip-text text-transparent relative">
                   Daniel
                   <motion.div
-                    className="absolute -inset-1 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-2xl -z-10"
+                    className="absolute -inset-1 bg-gradient-to-r from-[#637DDB]/20 to-[#637DDB]/10 blur-2xl -z-10"
                     animate={{
                       scale: [1, 1.1, 1],
                       opacity: [0.5, 0.8, 0.5],
@@ -222,10 +217,10 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl sm:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed"
+                className="text-xl sm:text-2xl text-[#B4B4B4] max-w-4xl mx-auto leading-relaxed"
               >
                 Desenvolvedor{" "}
-                <span className="text-cyan-400 font-semibold">Full Stack</span>{" "}
+                <span className="text-[#637DDB] font-semibold">Full Stack</span>{" "}
                 especialista em{" "}
                 <span className="text-orange-400 font-semibold">FiveM</span> e
                 tecnologias web modernas.
@@ -240,21 +235,21 @@ export default function Home() {
               className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto my-12"
             >
               <div
-                className="absolute inset-0 rounded-full border-2 border-blue-500/30 animate-spin"
+                className="absolute inset-0 rounded-full border-2 border-[#3C3C3C] animate-spin"
                 style={{ animationDuration: "8s" }}
               />
               <div
-                className="absolute inset-2 rounded-full border border-purple-500/30 animate-spin"
+                className="absolute inset-2 rounded-full border border-[#3C3C3C] animate-spin"
                 style={{
                   animationDuration: "6s",
                   animationDirection: "reverse",
                 }}
               />
               <div
-                className="absolute inset-4 rounded-full border border-cyan-500/30 animate-spin"
+                className="absolute inset-4 rounded-full border border-[#3C3C3C] animate-spin"
                 style={{ animationDuration: "4s" }}
               />
-              <div className="absolute inset-6 rounded-full overflow-hidden border-4 border-slate-800">
+              <div className="absolute inset-6 rounded-full overflow-hidden border-4 border-[#1C1C1B]">
                 <Image
                   src="profile.png"
                   alt="Daniel - Desenvolvedor Full Stack"
@@ -264,7 +259,7 @@ export default function Home() {
                 />
               </div>
               <motion.div
-                className="absolute -top-4 -right-4 w-4 h-4 bg-blue-400 rounded-full"
+                className="absolute -top-4 -right-4 w-4 h-4 bg-[#637DDB] rounded-full"
                 animate={{
                   y: [-10, 10, -10],
                   x: [-5, 5, -5],
@@ -275,28 +270,17 @@ export default function Home() {
                   ease: "easeInOut",
                 }}
               />
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-3 h-3 bg-purple-400 rounded-full"
-                animate={{
-                  y: [10, -10, 10],
-                  x: [5, -5, 5],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
+              <motion.div className="absolute -bottom-4 -left-4 w-3 h-3 bg-[#637DDB]/80 rounded-full" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-6 text-lg font-semibold shadow-2xl shadow-blue-500/25 transition-all duration-300 border-0"
+                className="group relative overflow-hidden bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 hover:from-[#4B7DDB] hover:to-[#637DDB]/60 text-[#F0F0F0 px-8 py-6 text-lg font-semibold shadow-md transition-all duration-300 border-0"
                 onClick={() =>
                   document
                     .getElementById("services")
@@ -305,34 +289,34 @@ export default function Home() {
               >
                 <span className="relative z-10 flex items-center">
                   Ver Meus Serviços
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 ml-2 text-[#F0F0F0] group-hover:translate-x-1 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#637DDB]/80 to-[#637DDB] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
 
               <Button
                 size="lg"
                 variant="outline"
-                className="group px-8 py-6 text-lg border-slate-700 hover:border-blue-500 bg-slate-900/50 backdrop-blur-sm transition-all duration-300 hover:bg-blue-500/10"
+                className="group px-8 py-6 text-lg font-medium text-[#F0F0F0] border-[#3C3C3C] hover:border-[#637DDB] bg-[#1C1C1B]/80 backdrop-blur-xl transition-all duration-300 hover:bg-[#637DDB]/20"
                 onClick={() =>
                   window.open("https://github.com/DnzxDev", "_blank")
                 }
               >
-                <Github className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                <Github className="w-5 h-5 mr-2 text-[#F0F0F0] group-hover:rotate-12 transition-transform" />
                 GitHub
               </Button>
 
               <Button
                 size="lg"
                 variant="outline"
-                className="group px-8 py-6 text-lg border-slate-700 hover:border-purple-500 bg-slate-900/50 backdrop-blur-sm transition-all duration-300 hover:bg-purple-500/10"
+                className="group px-8 py-6 text-lg font-medium text-[#F0F0F0] border-[#3C3C3C] hover:border-[#637DDB] bg-[#1C1C1B]/30 backdrop-blur-sm transition-all duration-300 hover:bg-[#637DDB]/20"
                 onClick={() =>
                   document
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <Mail className="w-5 h-5 mr-2 text-[#F0F0F0] group-hover:scale-110 transition-transform" />
                 Contato
               </Button>
             </motion.div>
@@ -344,25 +328,26 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 1 }}
               className="pt-12"
             >
-              <p className="text-slate-400 mb-6 font-medium text-lg">
+              <p className="text-[#B4B4B4] mb-6 font-medium text-lg">
                 Tecnologias que domino:
               </p>
               <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
                 {[
                   {
                     name: "Next.js",
-                    color: "bg-slate-700 text-slate-200 hover:bg-slate-600",
+                    color: "bg-[#1C1C1B] text-[#F0F0F0] hover:bg-[#1C1C1B]/80",
                     icon: "⚡",
                   },
                   {
                     name: "React",
-                    color: "bg-blue-500/20 text-blue-300 hover:bg-blue-500/30",
+                    color:
+                      "bg-[#637DDB]/20 text-[#F0F0F0] hover:bg-[#637DDB]/30",
                     icon: "⚛️",
                   },
                   {
                     name: "Node.js",
                     color:
-                      "bg-green-500/20 text-green-300 hover:bg-green-500/30",
+                      "bg-green-500/20 text-[#F0F0F0] hover:bg-green-500/30",
                     icon: "🟢",
                   },
                   {
@@ -372,7 +357,8 @@ export default function Home() {
                   },
                   {
                     name: "TypeScript",
-                    color: "bg-blue-600/20 text-blue-200 hover:bg-blue-600/30",
+                    color:
+                      "bg-[#637DDB]/20 text-[#F0F0F0] hover:bg-[#637DDB]/30",
                     icon: "📘",
                   },
                   {
@@ -388,7 +374,7 @@ export default function Home() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.2 + index * 0.1 }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className={`px-4 py-2 rounded-full text-sm font-medium ${tech.color} border border-white/10 cursor-pointer transition-all duration-300 flex items-center gap-2`}
+                    className={`px-4 py-2 rounded-full text-sm font-medium ${tech.color} border border-[#3C3C3C] cursor-pointer transition-all duration-300 flex items-center gap-2`}
                   >
                     <span>{tech.icon}</span>
                     {tech.name}
@@ -408,10 +394,10 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-[#F0F0F0] mb-4">
               Números que Impressionam
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+            <div className="w-24 h-1 bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 mx-auto rounded-full" />
           </motion.div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -424,17 +410,17 @@ export default function Home() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="relative group"
               >
-                <div className="text-center p-8 rounded-3xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="text-center p-8 rounded-3xl bg-[#1C1C1B]/80 backdrop-blur-sm border border-[#3C3C3C] hover:border-[#637DDB]/50 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#637DDB]/5 to-[#637DDB]/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div
-                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300`}
+                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#1C1C1B] to-[#121211] rounded-2xl mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <stat.icon className={`w-8 h-8 ${stat.color}`} />
                   </div>
 
                   <motion.div
-                    className="text-4xl font-bold text-white mb-2 relative z-10"
+                    className="text-4xl font-bold text-[#F0F0F0] mb-2 relative z-10"
                     initial={{ scale: 0.5 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
@@ -442,7 +428,7 @@ export default function Home() {
                     {stat.value}
                   </motion.div>
 
-                  <div className="text-slate-400 font-medium relative z-10">
+                  <div className="text-[#B4B4B4] font-medium relative z-10">
                     {stat.label}
                   </div>
                 </div>
@@ -451,7 +437,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+      <section id="about" className="py-24 px-6 sm:px-4 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -459,13 +445,13 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Sobre</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-[#F0F0F0]">Sobre</span>{" "}
+              <span className="bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 bg-clip-text text-transparent">
                 Mim
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6" />
-            <p className="text-slate-400 text-xl max-w-3xl mx-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 mx-auto rounded-full mb-6" />
+            <p className="text-[#B4B4B4] text-xl max-w-3xl mx-auto">
               Conheça a pessoa por trás do código
             </p>
           </motion.div>
@@ -476,13 +462,13 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               className="space-y-8"
             >
-              <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
+              <div className="space-y-6 text-[#B4B4B4] text-lg leading-relaxed">
                 <p className="text-xl">
-                  Sou <span className="text-white font-bold">Daniel</span>, um
-                  desenvolvedor apaixonado por criar soluções digitais que fazem
-                  a diferença. Com mais de 5 anos de experiência, especializo-me
-                  em desenvolvimento{" "}
-                  <span className="text-cyan-400 font-semibold">FiveM</span> e
+                  Sou <span className="text-[#F0F0F0] font-bold">Daniel</span>,
+                  um desenvolvedor apaixonado por criar soluções digitais que
+                  fazem a diferença. Com mais de 5 anos de experiência,
+                  especializo-me em desenvolvimento{" "}
+                  <span className="text-[#637DDB] font-semibold">FiveM</span> e
                   aplicações web modernas.
                 </p>
                 <p>
@@ -501,46 +487,46 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-sm"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-[#637DDB]/10 to-[#637DDB]/5 border border-[#3C3C3C] backdrop-blur-sm"
                 >
-                  <div className="flex items-center gap-3 text-blue-400 mb-3">
+                  <div className="flex items-center gap-3 text-[#637DDB] mb-3">
                     <MapPin className="w-5 h-5" />
                     <span className="font-semibold">Localização</span>
                   </div>
-                  <p className="text-slate-300">Minas Gerais, Brasil</p>
+                  <p className="text-[#B4B4B4]">Minas Gerais, Brasil</p>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 backdrop-blur-sm"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-[#637DDB]/10 to-[#637DDB]/5 border border-[#3C3C3C] backdrop-blur-sm"
                 >
-                  <div className="flex items-center gap-3 text-purple-400 mb-3">
+                  <div className="flex items-center gap-3 text-[#637DDB] mb-3">
                     <Calendar className="w-5 h-5" />
                     <span className="font-semibold">Experiência</span>
                   </div>
-                  <p className="text-slate-300">5+ anos</p>
+                  <p className="text-[#B4B4B4]">5+ anos</p>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 backdrop-blur-sm"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-[#637DDB]/10 to-[#637DDB]/5 border border-[#3C3C3C] backdrop-blur-sm"
                 >
-                  <div className="flex items-center gap-3 text-green-400 mb-3">
+                  <div className="flex items-center gap-3 text-[#637DDB] mb-3">
                     <Coffee className="w-5 h-5" />
                     <span className="font-semibold">Combustível</span>
                   </div>
-                  <p className="text-slate-300">Café & Código</p>
+                  <p className="text-[#B4B4B4]">Café & Código</p>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-orange-500/10 to-yellow-500/10 border border-orange-500/20 backdrop-blur-sm"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-[#637DDB]/10 to-[#637DDB]/5 border border-[#3C3C3C] backdrop-blur-sm"
                 >
-                  <div className="flex items-center gap-3 text-orange-400 mb-3">
+                  <div className="flex items-center gap-3 text-[#637DDB] mb-3">
                     <Heart className="w-5 h-5" />
                     <span className="font-semibold">Paixão</span>
                   </div>
-                  <p className="text-slate-300">Resolver Problemas</p>
+                  <p className="text-[#B4B4B4]">Resolver Problemas</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -550,18 +536,18 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               className="relative"
             >
-              <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-sm rounded-3xl p-8 border border-slate-700 overflow-hidden">
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl" />
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-xl" />
+              <div className="relative bg-gradient-to-br from-[#1C1C1B]/80 to-[#121211]/80 backdrop-blur-sm rounded-3xl p-8 border border-[#3C3C3C] overflow-hidden">
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#637DDB]/20 to-[#637DDB]/10 rounded-full blur-2xl" />
+                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-[#637DDB]/20 to-[#637DDB]/10 rounded-full blur-xl" />
 
                 <div className="relative z-10">
                   <div className="text-center mb-8">
                     <div className="relative w-40 h-40 mx-auto mb-6">
                       <div
-                        className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full animate-spin"
+                        className="absolute inset-0 bg-gradient-to-br from-[#637DDB] to-[#637DDB]/80 rounded-full animate-spin"
                         style={{ animationDuration: "8s" }}
                       />
-                      <div className="absolute inset-1 bg-slate-900 rounded-full" />
+                      <div className="absolute inset-1 bg-[#121211] rounded-full" />
                       <Image
                         src="https://avatars.githubusercontent.com/u/102752827?v=4"
                         alt="Profile"
@@ -570,10 +556,10 @@ export default function Home() {
                         className="absolute inset-1 w-full h-full object-cover rounded-full p-1"
                       />
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-2">
+                    <h3 className="text-3xl font-bold text-[#F0F0F0] mb-2">
                       Daniel
                     </h3>
-                    <p className="text-blue-400 font-semibold text-lg">
+                    <p className="text-[#637DDB] font-semibold text-lg">
                       Full Stack Developer
                     </p>
                     <div className="flex items-center justify-center gap-2 mt-2">
@@ -588,18 +574,18 @@ export default function Home() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-slate-700 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300"
+                      className="border-[#3C3C3C] hover:border-[#637DDB] hover:bg-[#637DDB]/10 text-[#F0F0F0] transition-all duration-300"
                       onClick={() =>
                         window.open("https://github.com/DnzxDev", "_blank")
                       }
                     >
-                      <Github className="w-4 h-4 mr-2" />
+                      <Github className="w-4 h-4 mr-2 text-[#F0F0F0]" />
                       GitHub
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-slate-700 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300"
+                      className="border-[#3C3C3C] hover:border-[#637DDB] hover:bg-[#637DDB]/10 text-[#F0F0F0] transition-all duration-300"
                       onClick={() =>
                         window.open(
                           "https://www.linkedin.com/in/dnzxdevop/",
@@ -607,17 +593,17 @@ export default function Home() {
                         )
                       }
                     >
-                      <Linkedin className="w-4 h-4 mr-2" />
+                      <Linkedin className="w-4 h-4 mr-2 text-[#F0F0F0]" />
                       LinkedIn
                     </Button>
                   </div>
 
                   <div className="text-center">
-                    <p className="text-slate-400 text-sm mb-4">
+                    <p className="text-[#B4B4B4] text-sm mb-4">
                       "É mais fácil ser o primeiro do que continuar a ser o
                       primeiro."
                     </p>
-                    <div className="text-slate-500 text-xs">- Bill Gates</div>
+                    <div className="text-[#B4B4B4] text-xs">- Bill Gates</div>
                   </div>
                 </div>
               </div>
@@ -626,14 +612,20 @@ export default function Home() {
         </div>
       </section>
       <section
-        className="py-32 px-6 sm:px-10 lg:px-20 relative z-10 overflow-hidden"
+        className="py-32 px-20 lg:px-20 sm:px-10 px-6 relative z-10 overflow-hidden"
         id="skills"
       >
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500/15 rounded-full blur-3xl animate-pulse delay-2000" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#637DDB]/40 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-20 right-10 w-96 h-96 bg-[#637DDB]/50 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1000ms" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#637DDB]/30 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2000ms" }}
+          />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -645,58 +637,52 @@ export default function Home() {
           >
             <div className="relative inline-block">
               <h2 className="text-7xl font-black tracking-tight relative z-10">
-                <span className="text-white drop-shadow-2xl">Minhas</span>{" "}
-                <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+                <span className="text-[#F0F0F0] drop-shadow-2xl">Minhas</span>{" "}
+                <span className="bg-gradient-to-r from-[#637DDB] via-[#637DDB]/80 to-[#637DDB] bg-clip-text text-transparent animate-pulse">
                   Habilidades
                 </span>
               </h2>
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-2xl rounded-full -z-10" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#637DDB]/10 via-[#637DDB]/5 to-[#637DDB]/10 blur-2xl rounded-full -z-10" />
             </div>
 
             <div className="flex items-center justify-center mt-8 mb-6">
-              <div className="w-16 h-1 bg-gradient-to-r from-transparent to-blue-500 rounded-full" />
-              <div className="w-8 h-8 mx-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full animate-spin" />
-              <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-transparent rounded-full" />
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#637DDB] rounded-full" />
+              <div
+                className="w-8 h-8 mx-4 bg-gradient-to-r from-[#637DDB] via-[#637DDB]/80 to-[#637DDB] rounded-full animate-spin"
+                style={{ animationDuration: "4s" }}
+              />
+              <div className="w-16 h-1 bg-gradient-to-r from-[#637DDB] to-transparent rounded-full" />
             </div>
 
-            <p className="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[#B4B4B4] text-xl max-w-3xl mx-auto leading-relaxed">
               Tecnologias e ferramentas que utilizo para criar experiências
               digitais
-              <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold">
+              <span className="text-transparent bg-gradient-to-r from-[#637DDB]/80 to-[#637DDB] bg-clip-text font-semibold">
                 {" "}
                 impactantes
               </span>
             </p>
           </motion.div>
 
-          <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {skills.map((category, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50, rotateX: 10 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{
-                  delay: index * 0.15,
+                  delay: 0.15,
                   duration: 0.8,
                   type: "spring",
                   stiffness: 100,
                 }}
-                whileHover={{
-                  scale: 1.03,
-                  rotateY: 2,
-                  transition: { duration: 0.3 },
-                }}
                 className="relative group perspective-1000"
               >
-                {/* Glow effect on hover */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#637DDB]/50 via-[#637DDB]/30 to-[#637DDB]/40 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
 
-                <div className="relative bg-slate-900/60 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/10 transition-all duration-700 hover:border-slate-400/70 transform-gpu">
-                  {/* Animated corner accents */}
-                  <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-blue-400/50 rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-pink-400/50 rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Floating gradient orb */}
+                <div className="relative bg-[#1C1C1B]/60 backdrop-blur-xl border border-[#3C3C3C]/50 rounded-3xl shadow-2xl p-8 hover:shadow-[#637DDB]/10 transition-all duration-700 hover:border-[#3C3C3C]/70 transform-gpu">
+                  <div className="absolute top-0 left-0 w-20 h-20 rounded-tl-3xl border-t-2 border-l-2 border-[#637DDB]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 right-0 w-20 h-20 rounded-br-3xl border-b-2 border-r-2 border-[#637DDB]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div
                     className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-40 blur-2xl z-0 pointer-events-none animate-bounce"
                     style={{
@@ -712,17 +698,17 @@ export default function Home() {
                         <div
                           className={`p-5 bg-gradient-to-br ${category.gradient} rounded-2xl mr-6 shadow-lg transform group-hover:scale-110 transition-transform duration-300`}
                         >
-                          <div className="text-4xl text-white filter drop-shadow-md">
+                          <div className="text-white text-4xl filter drop-shadow-md">
                             {category.icon}
                           </div>
                         </div>
                         <div className="absolute -inset-1 bg-gradient-to-br from-white/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                        <h3 className="text-white text-2xl font-bold mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#637DDB] group-hover:to-[#637DDB]/80 group-hover:bg-clip-text transition-all duration-300">
                           {category.category}
                         </h3>
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                       </div>
                     </div>
 
@@ -730,17 +716,17 @@ export default function Home() {
                       {category.skills.map((skill, skillIndex) => (
                         <div key={skillIndex} className="group/skill">
                           <div className="flex justify-between items-center mb-3">
-                            <span className="text-slate-200 font-semibold text-lg group-hover/skill:text-white group-hover/skill:scale-105 transition-all duration-300 origin-left">
+                            <span className="text-[#F0F0F0] font-semibold text-lg group-hover/skill:text-[#637DDB] group-hover/skill:scale-105 transition-all duration-300 origin-left">
                               {skill.name}
                             </span>
                             <div className="flex items-center space-x-2">
                               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300" />
-                              <span className="text-slate-400 text-base font-mono bg-slate-800/50 px-2 py-1 rounded-md">
+                              <span className="text-[#B4B4B4] text-base font-mono bg-[#1C1C1B]/50 px-2 py-1 rounded-md">
                                 {skill.level}%
                               </span>
                             </div>
                           </div>
-                          <div className="relative w-full h-4 bg-slate-700/70 rounded-full overflow-hidden backdrop-blur-sm">
+                          <div className="relative w-full h-4 bg-[#3C3C3C]/70 rounded-full overflow-hidden backdrop-blur-sm">
                             <motion.div
                               className={`h-4 rounded-full relative overflow-hidden ${skill.color}`}
                               initial={{ width: 0 }}
@@ -753,11 +739,11 @@ export default function Home() {
                             >
                               <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent animate-pulse rounded-full" />
                               <div
-                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-ping rounded-full"
+                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full animate-ping"
                                 style={{ animationDuration: "2s" }}
                               />
                             </motion.div>
-                            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-white rounded-full opacity-0 group-hover/skill:opacity-100 animate-ping transition-opacity duration-300" />
+                            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-[#F0F0F0] rounded-full opacity-0 group-hover/skill:opacity-100 animate-ping transition-opacity duration-300" />
                           </div>
                         </div>
                       ))}
@@ -784,13 +770,13 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Vamos</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-[#F0F0F0]">Vamos</span>{" "}
+              <span className="bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 bg-clip-text text-transparent">
                 Conversar
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6" />
-            <p className="text-slate-400 text-xl">
+            <div className="w-24 h-1 bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 mx-auto rounded-full mb-6" />
+            <p className="text-[#B4B4B4] text-xl">
               Tem um projeto em mente? Vamos transformá-lo em realidade!
             </p>
           </motion.div>
@@ -800,7 +786,7 @@ export default function Home() {
               {
                 name: "WhatsApp",
                 description: "Resposta rápida",
-                icon: <Phone className="w-6 h-6" />,
+                icon: <Phone className="w-6 h-6 text-[#F0F0F0]" />,
                 url: "https://wa.me/5532991048844",
                 color: "from-green-500 to-green-600",
                 hoverColor: "hover:from-green-600 hover:to-green-700",
@@ -808,18 +794,18 @@ export default function Home() {
               {
                 name: "LinkedIn",
                 description: "Networking profissional",
-                icon: <Linkedin className="w-6 h-6" />,
+                icon: <Linkedin className="w-6 h-6 text-[#F0F0F0]" />,
                 url: "https://linkedin.com/in/dnzxdevop",
-                color: "from-blue-600 to-blue-700",
-                hoverColor: "hover:from-blue-700 hover:to-blue-800",
+                color: "from-[#637DDB] to-[#637DDB]/80",
+                hoverColor: "hover:from-[#4B7DDB] hover:to-[#637DDB]/60",
               },
               {
                 name: "GitHub",
                 description: "Veja meu código",
-                icon: <Github className="w-6 h-6" />,
+                icon: <Github className="w-6 h-6 text-[#F0F0F0]" />,
                 url: "https://github.com/DnzxDev",
-                color: "from-gray-600 to-gray-700",
-                hoverColor: "hover:from-gray-700 hover:to-gray-800",
+                color: "from-[#1C1C1B] to-[#121211]",
+                hoverColor: "hover:from-[#1C1C1B]/80 hover:to-[#121211]/80",
               },
             ].map((contact, index) => (
               <motion.a
@@ -835,28 +821,20 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative z-10 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white/30 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
                     {contact.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-xl font-bold text-[#F0F0F0] mb-2">
                     {contact.name}
                   </h3>
-                  <p className="text-white/80">{contact.description}</p>
+                  <p className="text-[#B4B4B4]">{contact.description}</p>
                 </div>
               </motion.a>
             ))}
           </div>
         </div>
       </section>
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <p className="text-slate-500 text-sm">
-              © 2024 Daniel Angelo. Todos os direitos reservados.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </main>
   );
 }
