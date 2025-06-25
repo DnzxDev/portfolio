@@ -280,22 +280,6 @@ export default function Home() {
             >
               <Button
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 hover:from-[#4B7DDB] hover:to-[#637DDB]/60 text-[#F0F0F0 px-8 py-6 text-lg font-semibold shadow-md transition-all duration-300 border-0"
-                onClick={() =>
-                  document
-                    .getElementById("services")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <span className="relative z-10 flex items-center">
-                  Ver Meus Serviços
-                  <ArrowRight className="w-5 h-5 ml-2 text-[#F0F0F0] group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#637DDB]/80 to-[#637DDB] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
-
-              <Button
-                size="lg"
                 variant="outline"
                 className="group px-8 py-6 text-lg font-medium text-[#F0F0F0] border-[#3C3C3C] hover:border-[#637DDB] bg-[#1C1C1B]/80 backdrop-blur-xl transition-all duration-300 hover:bg-[#637DDB]/20"
                 onClick={() =>
