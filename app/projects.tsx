@@ -106,6 +106,14 @@ const projects = [
     },
     category: "Backend",
   },
+    {
+    title: "Sistema de loja in-game - FiveM",
+    description: "Sistema de loja dentro do jogo. com pagamento em coins, é possivel criar produtos dentro do jogo, sendo administrador, e com isso, os players podem comprar Mansões, Carros E Itens com Coins. O Sistema foi feito para Central Group.",
+    technologies: ["Lua", "Javascript", "React", "Oxmysql"],
+    imageUrl: "https://r2.fivemanage.com/YhWQSazQTiP1am36BQdDC/imagem_2025-07-11_161758270.png",
+    isPrivate: true,
+    category: "Full Stack",
+  },
 ];
 
 const categories = ["Todos", "Full Stack", "Front End", "Backend"];
