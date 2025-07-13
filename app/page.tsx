@@ -370,57 +370,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Stats Section aprimorado */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-[#F0F0F0] mb-4">
-              Números que Impressionam
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#637DDB] to-[#637DDB]/80 mx-auto rounded-full" />
-          </motion.div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="relative group"
-              >
-                <div className="text-center p-8 rounded-3xl bg-[#1C1C1B]/80 backdrop-blur-sm border border-[#3C3C3C] hover:border-[#637DDB]/50 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#637DDB]/5 to-[#637DDB]/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  <div
-                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#1C1C1B] to-[#121211] rounded-2xl mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <stat.icon className={`w-8 h-8 ${stat.color}`} />
-                  </div>
-
-                  <motion.div
-                    className="text-4xl font-bold text-[#F0F0F0] mb-2 relative z-10"
-                    initial={{ scale: 0.5 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-                  >
-                    {stat.value}
-                  </motion.div>
-
-                  <div className="text-[#B4B4B4] font-medium relative z-10">
-                    {stat.label}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    
+      
       <section id="about" className="py-24 px-6 sm:px-4 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
