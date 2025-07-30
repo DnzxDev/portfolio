@@ -370,7 +370,7 @@ export default function Home() {
 
     
       
-      <section id="about" className="py-24 px-6 sm:px-4 lg:px-8 relative z-10">
+      <section id="about" className="min-h-screen flex items-center justify-center py-24 px-6 sm:px-4 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
