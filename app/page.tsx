@@ -252,7 +252,7 @@ export default function Home() {
               <div className="absolute inset-6 rounded-full overflow-hidden border-4 border-[#1C1C1B]">
                 <Image
                   src="profile.png"
-                  alt="Daniel - Desenvolvedor Full Stack"
+                  alt="Daniel"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
@@ -304,8 +304,6 @@ export default function Home() {
                 Contato
               </Button>
             </motion.div>
-
-            {/* Tech Stack aprimorado */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -465,84 +463,6 @@ export default function Home() {
                 </motion.div>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="relative"
-            >
-              <div className="relative bg-gradient-to-br from-[#1C1C1B]/80 to-[#121211]/80 backdrop-blur-sm rounded-3xl p-8 border border-[#3C3C3C] overflow-hidden">
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#637DDB]/20 to-[#637DDB]/10 rounded-full blur-2xl" />
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-[#637DDB]/20 to-[#637DDB]/10 rounded-full blur-xl" />
-
-                <div className="relative z-10">
-                  <div className="text-center mb-8">
-                    <div className="relative w-40 h-40 mx-auto mb-6">
-                      <div
-                        className="absolute inset-0 bg-gradient-to-br from-[#637DDB] to-[#637DDB]/80 rounded-full animate-spin"
-                        style={{ animationDuration: "8s" }}
-                      />
-                      <div className="absolute inset-1 bg-[#121211] rounded-full" />
-                      <Image
-                        src="https://avatars.githubusercontent.com/u/102752827?v=4"
-                        alt="Profile"
-                        width={152}
-                        height={152}
-                        className="absolute inset-1 w-full h-full object-cover rounded-full p-1"
-                      />
-                    </div>
-                    <h3 className="text-3xl font-bold text-[#F0F0F0] mb-2">
-                      Daniel
-                    </h3>
-                    <p className="text-[#637DDB] font-semibold text-lg">
-                      Full Stack Developer
-                    </p>
-                    <div className="flex items-center justify-center gap-2 mt-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                      <span className="text-green-400 text-sm font-medium">
-                        Disponível
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-center gap-4 mb-6">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-[#3C3C3C] hover:border-[#637DDB] hover:bg-[#637DDB]/10 text-[#F0F0F0] transition-all duration-300"
-                      onClick={() =>
-                        window.open("https://github.com/DnzxDev", "_blank")
-                      }
-                    >
-                      <Github className="w-4 h-4 mr-2 text-[#F0F0F0]" />
-                      GitHub
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-[#3C3C3C] hover:border-[#637DDB] hover:bg-[#637DDB]/10 text-[#F0F0F0] transition-all duration-300"
-                      onClick={() =>
-                        window.open(
-                          "https://www.linkedin.com/in/dnzxdevop/",
-                          "_blank"
-                        )
-                      }
-                    >
-                      <Linkedin className="w-4 h-4 mr-2 text-[#F0F0F0]" />
-                      LinkedIn
-                    </Button>
-                  </div>
-
-                  <div className="text-center">
-                    <p className="text-[#B4B4B4] text-sm mb-4">
-                      "É mais fácil ser o primeiro do que continuar a ser o
-                      primeiro."
-                    </p>
-                    <div className="text-[#B4B4B4] text-xs">- Bill Gates</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -550,7 +470,6 @@ export default function Home() {
         className="py-32 px-20 lg:px-20 sm:px-10 px-6 relative z-10 overflow-hidden"
         id="skills"
       >
-        {/* Animated background elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#637DDB]/40 rounded-full blur-3xl animate-pulse" />
           <div
