@@ -1,23 +1,23 @@
-# 🌐 Portfólio Pessoal - Desenvolvedor Full Stack
+# 🌐 Personal Portfolio - Full Stack Developer
 
-Este é meu **portfólio pessoal**, desenvolvido com **React + TypeScript**, com foco em performance, responsividade e integração automática com meu perfil do **GitHub** para exibir repositórios e projetos públicos em tempo real.
-
----
-
-## 🧰 Tecnologias Utilizadas
-
-- **React** com **TypeScript**
-- **NextJS** (build e dev server rápido)
-- **GitHub API** (para listar repositórios)
-- **Framer Motion** (animações suaves)
-- **TailwindCSS** (estilização rápida e moderna)
+This is my **personal portfolio**, built with **React + TypeScript**, focusing on performance, responsiveness, and automatic integration with my **GitHub** profile to display repositories and public projects in real time.
 
 ---
 
-## 📸 Funcionalidades
+## 🧰 Technologies Used
 
-- Exibição dos repositórios públicos do GitHub.
-- Layout responsivo para desktop, tablet e mobile.
-- Sessões de **Sobre mim**, **Projetos**, **Skills** e **Contato**.
-- Animações elegantes e navegação suave com Scroll-to.
-- SEO otimizado com meta tags dinâmicas.
+- **React** with **TypeScript**
+- **Next.js** (fast build and dev server)
+- **GitHub API** (to list repositories)
+- **Framer Motion** (smooth animations)
+- **TailwindCSS** (modern and fast styling)
+
+---
+
+## 📸 Features
+
+- Displays public GitHub repositories.
+- Responsive layout for desktop, tablet, and mobile.
+- Sections for **About Me**, **Projects**, **Skills**, and **Contact**.
+- Elegant animations and smooth navigation with scroll-to.
+- SEO optimized with dynamic meta tags.
